@@ -17,9 +17,10 @@ public class Register extends AppCompatActivity {
         register_button.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
+                // Here comes SQL request foir registering new value.
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        Register.class
+                        MainActivity.class
                 );
                 startActivity(intent);
             }

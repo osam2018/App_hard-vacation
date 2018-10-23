@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HradVacation</string>
+    <string name="activity_main_register_button">등록신청(병)</string>
+    <string name="register_submit">등록</string>
+</resources>
