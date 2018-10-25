@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    tools:context=".user_view">
+    tools:context=".UserView">
 
     <TextView
         android:id="@+id/dateStart"

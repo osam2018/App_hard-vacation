@@ -15,14 +15,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class UserDataListAdapter extends BaseAdapter {
+public class UserListAdapter extends BaseAdapter {
     LayoutInflater inflater = null;
     private ArrayList<UserShowItemData> dataholder = null;
     private int listCnt = 0;
     private Intent intent;
     private Context context;
 
-    public UserDataListAdapter(ArrayList<UserShowItemData> _datali, Context context, Intent intent){
+    public UserListAdapter(ArrayList<UserShowItemData> _datali, Context context, Intent intent){
         dataholder = _datali;
         listCnt = _datali.size();
         this.context = context;

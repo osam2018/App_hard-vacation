@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -14,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
-
-import static android.app.Activity.RESULT_OK;
 
 public class QRPopupActivity extends Activity{
 
@@ -37,7 +34,7 @@ public class QRPopupActivity extends Activity{
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
         String filename = intent.getStringExtra("filename");
-        myQRcreator QRcreator = new myQRcreator();
+        MyQRcreator QRcreator = new MyQRcreator();
         String result = QRcreator.CreateQRCode(data, "/QRCODE/", filename);
 
         if(result.equals("true")) {

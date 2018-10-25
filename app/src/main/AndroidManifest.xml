@@ -22,8 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".manager_view"></activity>
-        <activity android:name=".user_view"></activity>
+        <activity android:name=".ManagerView"></activity>
+        <activity android:name=".UserView"></activity>
         <activity android:name=".PopupActivity" android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".QRPopupActivity" android:theme="@android:style/Theme.Dialog" />
 

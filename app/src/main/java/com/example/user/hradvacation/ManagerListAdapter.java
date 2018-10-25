@@ -10,21 +10,19 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONObject;
-import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class AdminListAdapter extends BaseAdapter {
+public class ManagerListAdapter extends BaseAdapter {
     LayoutInflater inflater = null;
-    private ArrayList<AdminShowItemData> dataholder = null;
+    private ArrayList<ManagerShowItemData> dataholder = null;
     private int listCnt = 0;
     private Intent intent;
     private Context context;
 
-    public AdminListAdapter( ArrayList<AdminShowItemData> _datali, Context context, Intent intent){
+    public ManagerListAdapter( ArrayList<ManagerShowItemData> _datali, Context context, Intent intent){
         dataholder = _datali;
         listCnt = _datali.size();
         this.context = context;
@@ -54,7 +52,7 @@ public class AdminListAdapter extends BaseAdapter {
             if(inflater == null){
                 inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             }
-            convertView = inflater.inflate(R.layout.listview_item, parent, false);
+            convertView = inflater.inflate(R.layout.manager_listview_item, parent, false);
         }
 
         final TextView usernameText = (TextView) convertView.findViewById(R.id.username);

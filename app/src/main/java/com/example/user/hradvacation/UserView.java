@@ -13,7 +13,7 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 
 
-public class user_view extends AppCompatActivity {
+public class UserView extends AppCompatActivity {
     private int current_clicked = -1;
     private ListView  gen_listView = null;
     @Override
@@ -49,7 +49,7 @@ public class user_view extends AppCompatActivity {
         }
 
         gen_listView = (ListView) findViewById(R.id.user_manage_list);
-        final UserDataListAdapter gen_Adapter = new UserDataListAdapter(dataholder, getApplicationContext(), intent);
+        final UserListAdapter gen_Adapter = new UserListAdapter(dataholder, getApplicationContext(), intent);
         gen_listView.setAdapter(gen_Adapter);
         gen_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

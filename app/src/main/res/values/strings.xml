@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">HardVacation</string>
-    <string name="activity_main_register_button">등록신청(병)</string>
-    <string name="register_submit">등록</string>
     <string name="app_title">휴가 관리자</string>
+    <string name="activity_main_register_button">등록신청(병)</string>
     <string name="activity_main_milnum">군번</string>
     <string name="placeholder_birth">생년월일(YYMMDD)</string>
     <string name="activitiy_main_manager_view">허가(간부)</string>
@@ -17,6 +16,7 @@
     <string name="placeholder_region">부대명</string>
     <string name="placeholder_level">계급</string>
     <string name="placeholder_manager_milnum">간부 군번</string>
+    <string name="register_submit">등록</string>
     <string name="text_literal_from">부터</string>
     <string name="text_literal_to">까지</string>
     <string name="activity_user_view_remove">제거</string>

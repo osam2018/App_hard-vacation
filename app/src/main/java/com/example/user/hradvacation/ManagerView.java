@@ -18,14 +18,14 @@ package com.example.user.hradvacation;
 
 
 
-public class manager_view extends AppCompatActivity {
+public class ManagerView extends AppCompatActivity {
     private int current_clicked = -1;
     private ListView  gen_listView = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_view);
-        ArrayList<AdminShowItemData> dataholder = new ArrayList<>();
+        ArrayList<ManagerShowItemData> dataholder = new ArrayList<>();
 
         Intent intent = getIntent();
         String zeroString = intent.getStringExtra("data");
@@ -35,10 +35,10 @@ public class manager_view extends AppCompatActivity {
             if(oneString.getString("state").equals("true")){
                 JSONArray JSONdata = new JSONArray(oneString.getString("data"));
                 String[] Stringdata = ParsingJSON.toStringArray(JSONdata);
-                //Parse JSON List and generate AdminShowItemData
+                //Parse JSON List and generate ManagerShowItemData
                 for (String s : Stringdata) {
                     try {
-                        AdminShowItemData item = new AdminShowItemData();
+                        ManagerShowItemData item = new ManagerShowItemData();
                         JSONObject jsonObject = new JSONObject(s);
                         item.userNameStr = jsonObject.getString("username");
                         item.userDateStr = jsonObject.getString("start").split("T")[0] + '~' + jsonObject.getString("end").split("T")[0];
@@ -55,17 +55,17 @@ public class manager_view extends AppCompatActivity {
         }
 
         gen_listView = (ListView) findViewById(R.id.admin_manage_list);
-        final AdminListAdapter gen_Adapter = new AdminListAdapter(dataholder, getApplicationContext(), intent);
+        final ManagerListAdapter gen_Adapter = new ManagerListAdapter(dataholder, getApplicationContext(), intent);
         gen_listView.setAdapter(gen_Adapter);
         gen_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
                 if (current_clicked != -1) {
-                    ((AdminShowItemData) gen_Adapter.getItem(current_clicked)).isClicked = false;
-                    ((AdminShowItemData) gen_Adapter.getItem(position)).isClicked = true;
+                    ((ManagerShowItemData) gen_Adapter.getItem(current_clicked)).isClicked = false;
+                    ((ManagerShowItemData) gen_Adapter.getItem(position)).isClicked = true;
                     current_clicked = position;
                 } else {
-                    ((AdminShowItemData) gen_Adapter.getItem(position)).isClicked = true;
+                    ((ManagerShowItemData) gen_Adapter.getItem(position)).isClicked = true;
                     current_clicked = position;
                 }
                     gen_Adapter.notifyDataSetChanged();

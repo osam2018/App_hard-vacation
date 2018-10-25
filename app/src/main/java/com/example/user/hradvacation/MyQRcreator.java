@@ -9,7 +9,7 @@ import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidmads.library.qrgenearator.QRGSaver;
 
-public class myQRcreator {
+public class MyQRcreator {
     private String inputvalue;
     private int smallerDimension;
     private Bitmap bitmap;

@@ -1,14 +1,11 @@
 package com.example.user.hradvacation;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -107,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                         //Toast.makeText(getApplicationContext(), resultJSON2, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(
                                 getApplicationContext(),
-                                manager_view.class
+                                ManagerView.class
                         );
                         intent.putExtra("token", token);
                         intent.putExtra("data", resultJSON2);
@@ -152,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(
                                 getApplicationContext(),
-                                user_view.class
+                                UserView.class
                         );
                         intent.putExtra("token", token);
                         intent.putExtra("data", resultJSON2);
