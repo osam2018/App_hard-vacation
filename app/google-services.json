@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "306275776080",
+    "firebase_url": "https://osam-auth.firebaseio.com",
+    "project_id": "osam-auth",
+    "storage_bucket": "osam-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306275776080:android:53ba2442b01d83c8",
+        "android_client_info": {
+          "package_name": "com.example.user.hradvacation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306275776080-hjjeee03akot9v5r73r1eo09r450gbub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.hradvacation",
+            "certificate_hash": "5457cdb8f99040b6ca6dd464bc1ee15b8a3b72a2"
+          }
+        },
+        {
+          "client_id": "306275776080-r8davdm9h15bv4dqh8k54j4anghb0j23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX5z7jf3pbwFoJSLKG8rH3uARBc5y-OVs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306275776080-r8davdm9h15bv4dqh8k54j4anghb0j23.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
