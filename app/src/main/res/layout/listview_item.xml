@@ -13,7 +13,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:text="Name"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +24,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
@@ -34,7 +32,7 @@
         android:layout_width="64dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
-        android:text="승인"
+        android:text="@string/activity_manager_view_accept"
         android:textColor="#ffffff"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +46,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:background="#b01313"
-        android:text="거부"
+        android:text="@string/activity_manager_view_reject"
         android:textColor="#ffffff"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

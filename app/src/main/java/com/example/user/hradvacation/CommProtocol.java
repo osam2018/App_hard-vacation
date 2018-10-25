@@ -22,24 +22,29 @@ import java.net.URLEncoder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+/*
+class CommProtocol(String route, String JSON, String Token, reduntants...) : manage JSON  transaction with given route ({baseURL}/{route})
+    .connect().get() returns JSON data by async connection w/ given values.
+ */
 public class CommProtocol extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... strings) {
 
+        String baseURL ="http://13.125.195.148:57728/";
         HttpURLConnection con = null;
         BufferedReader reader = null;
 
         try {
-            URL url = new URL("http://13.125.195.148:57728/" + strings[0]);
+            URL url = new URL(baseURL + strings[0]);
 
             con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");//POST방식으로 보냄
-            //con.setRequestProperty("Cache-Control", "no-cache");//캐시 설정
             con.setRequestProperty("Content-Type", "application/json");//application JSON 형식으로 전송
             con.setRequestProperty("Accept", "application/json");//서버에 response 데이터를 json으로 받음
             con.setRequestProperty("charset", "utf-8");
-            con.setRequestProperty("Authorization", "Bearer "+strings[2]);
+            con.setRequestProperty("Authorization", "Bearer "+strings[2]);  // Process Authentication
             con.setDoOutput(true);//Outstream으로 post 데이터를 넘겨주겠다는 의미
             con.setDoInput(true);//Inputstream으로 서버로부터 응답을 받겠다는 의미
             con.connect();
@@ -49,12 +54,6 @@ public class CommProtocol extends AsyncTask<String, String, String> {
             writer.write(strings[1]);
             writer.flush();
             writer.close();
-
-            /*
-            Log.i("STATUS", String.valueOf(con.getResponseCode()));
-            Log.d("message", strings[1]);
-            Log.i("MSG", con.getRequestProperty("data"));
-            */
 
             //서버로 부터 데이터를 받음
             InputStream stream = con.getInputStream();

@@ -7,16 +7,9 @@ import android.widget.Button;
 import android.view.Window;
 import android.content.Intent;
 import android.view.View;
-import android.view.MotionEvent;
-
-import org.json.JSONObject;
-import org.json.JSONException;
-
-import java.util.EventObject;
 
 public class PopupActivity extends Activity {
     TextView txttext;
-
     Button okay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +19,8 @@ public class PopupActivity extends Activity {
         setContentView(R.layout.activity_popup);
 
         //UI 객체생성
-        txttext = (TextView)findViewById(R.id.txtText);
-        okay = (Button)findViewById(R.id.bbutton);
+        txttext = (TextView)findViewById(R.id.text_notice);
+        okay = (Button)findViewById(R.id.button_close);
         //데이터 가져오기
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");

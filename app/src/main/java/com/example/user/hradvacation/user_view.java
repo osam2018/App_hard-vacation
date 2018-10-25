@@ -24,8 +24,6 @@ public class user_view extends AppCompatActivity {
         String[] state_string = {"대기", "승인", "거절"};
         ArrayList<UserShowItemData> dataholder = new ArrayList<>();
 
-
-        // You must apply data that is from server.
         Intent intent = getIntent();
         String zeroString = intent.getStringExtra("data");
         try{
@@ -34,27 +32,21 @@ public class user_view extends AppCompatActivity {
                 JSONArray JSONdata = new JSONArray(oneString.getString("data"));
                 String[] Stringdata = ParsingJSON.toStringArray(JSONdata);
                 for(String s : Stringdata) {
-                    try {
-                        UserShowItemData item = new UserShowItemData();
-                        JSONObject jsonObject = new JSONObject(s);
-                        item.userDateStartStr = jsonObject.getString("start").split("T")[0];
-                        item.userDateEndStr = jsonObject.getString("end").split("T")[0];
-                        item.state = Integer.parseInt(jsonObject.getString("cert"));
-                        item.id = jsonObject.getString("id");
-                        item.parsedString = state_string[item.state];
-                        item.isClicked = false;
-                        dataholder.add(item);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    UserShowItemData item = new UserShowItemData();
+                    JSONObject jsonObject = new JSONObject(s);
+                    item.userDateStartStr = jsonObject.getString("start").split("T")[0];
+                    item.userDateEndStr = jsonObject.getString("end").split("T")[0];
+                    item.state = Integer.parseInt(jsonObject.getString("cert"));
+                    item.id = jsonObject.getString("id");
+                    item.parsedString = state_string[item.state];
+                    item.isClicked = false;
+                    item.url = jsonObject.getString("hash");
+                    dataholder.add(item);
                 }
             }
-
         }catch(JSONException e){
             e.printStackTrace();
         }
-
-
 
         gen_listView = (ListView) findViewById(R.id.user_manage_list);
         final UserDataListAdapter gen_Adapter = new UserDataListAdapter(dataholder, getApplicationContext(), intent);
@@ -62,10 +54,7 @@ public class user_view extends AppCompatActivity {
         gen_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                if (current_clicked == position) {
-                    ((UserShowItemData) gen_Adapter.getItem(position)).isClicked = false;
-                    current_clicked = -1;
-                } else if (current_clicked != -1) {
+                if (current_clicked != -1) {
                     ((UserShowItemData) gen_Adapter.getItem(current_clicked)).isClicked = false;
                     ((UserShowItemData) gen_Adapter.getItem(position)).isClicked = true;
                     current_clicked = position;
@@ -75,6 +64,12 @@ public class user_view extends AppCompatActivity {
                 }
                 gen_Adapter.notifyDataSetChanged();
 
+                Intent intent2 = new Intent(getApplicationContext(), QRPopupActivity.class);
+
+                intent2.putExtra("data", ((UserShowItemData)gen_Adapter.getItem(position)).url);
+                intent2.putExtra("filename",((UserShowItemData)gen_Adapter.getItem(position)).userDateStartStr);
+
+                startActivity(intent2);
             }
         });
 

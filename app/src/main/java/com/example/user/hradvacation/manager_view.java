@@ -25,20 +25,17 @@ public class manager_view extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_view);
-
-        //String[] examples = {"상병 안신우", "2018-10-22 ~ 2018-10-26", "상병 곽범주", "2018-10-22 ~ 2018-04-02"};
         ArrayList<AdminShowItemData> dataholder = new ArrayList<>();
 
         Intent intent = getIntent();
         String zeroString = intent.getStringExtra("data");
-
 
         try {
             JSONObject oneString = new JSONObject(zeroString);
             if(oneString.getString("state").equals("true")){
                 JSONArray JSONdata = new JSONArray(oneString.getString("data"));
                 String[] Stringdata = ParsingJSON.toStringArray(JSONdata);
-                //Toast.makeText(getApplicationContext(), Stringdata.toString(), Toast.LENGTH_LONG).show();
+                //Parse JSON List and generate AdminShowItemData
                 for (String s : Stringdata) {
                     try {
                         AdminShowItemData item = new AdminShowItemData();
@@ -46,7 +43,6 @@ public class manager_view extends AppCompatActivity {
                         item.userNameStr = jsonObject.getString("username");
                         item.userDateStr = jsonObject.getString("start").split("T")[0] + '~' + jsonObject.getString("end").split("T")[0];
                         item.id = jsonObject.getString("id");
-                        //Toast.makeText(getApplicationContext(), item.id, Toast.LENGTH_LONG).show();
                         item.isClicked = false;
                         dataholder.add(item);
                     } catch (Exception e) {
@@ -64,10 +60,7 @@ public class manager_view extends AppCompatActivity {
         gen_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                if (current_clicked == position) {
-                    ((AdminShowItemData) gen_Adapter.getItem(position)).isClicked = false;
-                    current_clicked = -1;
-                } else if (current_clicked != -1) {
+                if (current_clicked != -1) {
                     ((AdminShowItemData) gen_Adapter.getItem(current_clicked)).isClicked = false;
                     ((AdminShowItemData) gen_Adapter.getItem(position)).isClicked = true;
                     current_clicked = position;

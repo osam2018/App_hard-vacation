@@ -74,7 +74,7 @@ public class AdminListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 try{
                     JSONObject js_obj = new JSONObject();
-                    js_obj.put("username", Integer.parseInt(dataholder.get(index).id));
+                    js_obj.put("id", Integer.parseInt(dataholder.get(index).id));
                     js_obj.put("state", "true");
                     com.example.user.hradvacation.CommProtocol Communication = new CommProtocol();
                     //리턴 값 처리
@@ -98,7 +98,7 @@ public class AdminListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 try{
                     JSONObject js_obj = new JSONObject();
-                    js_obj.put("username", Integer.parseInt(dataholder.get(index).id));
+                    js_obj.put("id", Integer.parseInt(dataholder.get(index).id));
                     js_obj.put("state", "false");
                     com.example.user.hradvacation.CommProtocol Communication = new CommProtocol();
                     //리턴 값 처리
@@ -109,15 +109,11 @@ public class AdminListAdapter extends BaseAdapter {
                     listCnt -= 1;
                     notifyDataSetChanged();
 
-
-
                 }catch(Exception e){
                     e.printStackTrace();
                 }
             }
         });
-
-
 
         if(!dataholder.get(pos).isClicked){
             button_accept.setVisibility(View.INVISIBLE);

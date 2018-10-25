@@ -13,7 +13,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_weight="1"
-        android:text="TextView"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +23,6 @@
         android:layout_height="22dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="12dp"
-        android:text="TextView"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -35,7 +33,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:background="#b01313"
-        android:text="제거"
+        android:text="@string/activity_user_view_remove"
         android:textColor="#ffffff"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_marginEnd="16dp"
-        android:text="상태"
+        android:text="@string/activity_user_view_state"
         android:textSize="25sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_reject"
         app:layout_constraintEnd_toStartOf="@+id/button_reject" />

@@ -28,7 +28,6 @@ public class Register extends AppCompatActivity {
 
         Button register_button = (Button)findViewById(R.id.register_submit);
 
-
         register_button.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -37,12 +36,12 @@ public class Register extends AppCompatActivity {
                     String token = intent2.getStringExtra("token");
                     String milnum = intent2.getStringExtra("milnum");
 
-                    EditText RegionData = (EditText) findViewById(R.id.editText);
-                    EditText LevelData = (EditText) findViewById(R.id.editText2);
-                    EditText StartData = (EditText) findViewById(R.id.editText7);
-                    EditText EndData = (EditText) findViewById(R.id.editText8);
-                    EditText UsernameData = (EditText) findViewById(R.id.editText5);
-                    EditText ManageMilnumData = (EditText) findViewById(R.id.editText6);
+                    EditText RegionData = (EditText) findViewById(R.id.edit_region);
+                    EditText LevelData = (EditText) findViewById(R.id.edit_level);
+                    EditText StartData = (EditText) findViewById(R.id.edit_start_date);
+                    EditText EndData = (EditText) findViewById(R.id.edit_start_end);
+                    EditText UsernameData = (EditText) findViewById(R.id.edit_username);
+                    EditText ManageMilnumData = (EditText) findViewById(R.id.edit_manager_milnum);
 
                     JSONObject js_obj= new JSONObject();
                     js_obj.put("username", UsernameData.getText().toString());
@@ -56,19 +55,24 @@ public class Register extends AppCompatActivity {
                     com.example.user.hradvacation.CommProtocol Communication = new CommProtocol();
                     //리턴 값 처리
 
-                    //Toast.makeText(getApplicationContext(), token, Toast.LENGTH_LONG).show();
                     String resultJSON = Communication.execute("register", js_obj.toString(), token).get();
 
                     JSONObject r_jsonObject = new JSONObject(resultJSON);
                     String data = r_jsonObject.getString("state");
 
+                    //메인 화면으로 복귀
                     Intent intent = new Intent(
                             getApplicationContext(),
                             PopupActivity.class
                     );
 
-                    intent.putExtra("data", data);
+                    if(data.equals("true")){
+                        intent.putExtra("data", "등록 성공");
+                    }else{
+                        intent.putExtra("data", "등록 실패");
+                    }
                     startActivity(intent);
+                    finish();
 
 
                 }catch(JSONException e){

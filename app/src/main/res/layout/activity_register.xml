@@ -19,76 +19,76 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/edit_start_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
                 android:ems="10"
-                android:hint="YYMMDD"
+                android:hint="@string/placeholder_date"
                 android:inputType="date"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText6" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_manager_milnum" />
 
             <EditText
-                android:id="@+id/editText8"
+                android:id="@+id/edit_start_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:ems="10"
-                android:hint="YYMMDD"
+                android:hint="@string/placeholder_date"
                 android:inputType="date"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText7" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_start_date" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/edit_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="28dp"
                 android:ems="10"
-                android:hint="이름"
+                android:hint="@string/placeholder_name"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_level" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/edit_region"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
                 android:ems="10"
-                android:hint="부대명"
+                android:hint="@string/placeholder_region"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/edit_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="28dp"
                 android:ems="10"
-                android:hint="계급"
+                android:hint="@string/placeholder_level"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_region" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/edit_manager_milnum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:ems="10"
-                android:hint="간부 군번"
+                android:hint="@string/placeholder_manager_milnum"
                 android:inputType="textPersonName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_username" />
 
             <Button
                 android:id="@+id/register_submit"
@@ -98,25 +98,25 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/register_submit"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText8" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_start_end" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textholder_until"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="부터"
-                app:layout_constraintBaseline_toBaselineOf="@+id/editText7"
-                app:layout_constraintStart_toEndOf="@+id/editText7" />
+                android:text="@string/text_literal_from"
+                app:layout_constraintBaseline_toBaselineOf="@+id/edit_start_date"
+                app:layout_constraintStart_toEndOf="@+id/edit_start_date" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textholder_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="까지"
-                app:layout_constraintBaseline_toBaselineOf="@+id/editText8"
-                app:layout_constraintStart_toEndOf="@+id/editText8" />
+                android:text="@string/text_literal_to"
+                app:layout_constraintBaseline_toBaselineOf="@+id/edit_start_end"
+                app:layout_constraintStart_toEndOf="@+id/edit_start_end" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
