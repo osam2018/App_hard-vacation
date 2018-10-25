@@ -31,25 +31,26 @@
 
     <Button
         android:id="@+id/button_accept"
-        android:layout_width="60dp"
+        android:layout_width="64dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:text="승인"
         android:textColor="#ffffff"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button_reject"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_reject"
-        tools:background="#2ea13f" />
+        android:background="#2ea13f"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_reject"
-        android:layout_width="60dp"
+        android:layout_width="64dp"
         android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:background="#b01313"
         android:text="거부"
         android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
