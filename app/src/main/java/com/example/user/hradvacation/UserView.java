@@ -67,6 +67,7 @@ public class UserView extends AppCompatActivity {
                 Intent intent2 = new Intent(getApplicationContext(), QRPopupActivity.class);
 
                 intent2.putExtra("data", ((UserShowItemData)gen_Adapter.getItem(position)).url);
+                intent2.putExtra("cert",((UserShowItemData)gen_Adapter.getItem(position)).parsedString);
                 intent2.putExtra("filename",((UserShowItemData)gen_Adapter.getItem(position)).userDateStartStr);
 
                 startActivity(intent2);

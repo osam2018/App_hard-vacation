@@ -35,9 +35,10 @@ public class QRPopupActivity extends Activity{
         String data = intent.getStringExtra("data");
         String filename = intent.getStringExtra("filename");
         MyQRcreator QRcreator = new MyQRcreator();
-        String result = QRcreator.CreateQRCode(data, "/QRCODE/", filename);
+        QRcreator.CreateQRCode(data, "/QRCODE/", filename);
+        String result = intent.getStringExtra("cert");
 
-        if(result.equals("true")) {
+        if(result.equals("승인")) {
             File imgFile = new File(Environment.getExternalStorageDirectory()+"/QRCODE/" + filename + ".jpg" );
             Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
             imageView.setImageBitmap(myBitmap);
